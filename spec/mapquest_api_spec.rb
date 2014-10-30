@@ -46,11 +46,11 @@ describe MapquestApi::RouteMatrix do
     end
     it "should return an hash with :time key" do
       result = MapquestApi::RouteMatrix.new(locations).run
-      expect(result[:time]).not_to be_nil
+      expect(result["time"]).not_to be_nil
     end
     it "should return an hash with :distance key" do
       result = MapquestApi::RouteMatrix.new(locations).run
-      expect(result[:distance]).not_to be_nil
+      expect(result["distance"]).not_to be_nil
     end
   end
 

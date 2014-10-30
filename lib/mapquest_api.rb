@@ -19,8 +19,7 @@ module MapquestApi
         :options => { :allToAll => true, :unit => "k" }
       }
       response = RestClient.post "http://open.mapquestapi.com/directions/v2/routematrix?key=#{MapquestApi.api_key}", body.to_json, :content_type => :json, :accept => :json
-      response_json = Oj.load(response)
-      {time: response_json["time"], distance: response_json["distance"]}
+      Oj.load(response)
     end
   end
 end
